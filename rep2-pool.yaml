@@ -1,0 +1,27 @@
+apiVersion: ceph.rook.io/v1
+kind: CephBlockPool
+metadata:
+  finalizers:
+  - cephblockpool.ceph.rook.io
+  name: replica-2-rbd
+  namespace: openshift-storage
+
+spec:
+  compressionMode: ""
+  crushRoot: ""
+  deviceClass: ""
+  enableRBDStats: true
+  erasureCoded:
+    algorithm: ""
+    codingChunks: 0
+    dataChunks: 0
+  failureDomain: rack
+  parameters:
+    compression_mode: ""
+  replicated:
+    requireSafeReplicaSize: false
+    size: 2
+    targetSizeRatio: 0.49
+status:
+  phase: Ready
+

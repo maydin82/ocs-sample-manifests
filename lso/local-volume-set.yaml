@@ -1,0 +1,54 @@
+apiVersion: local.storage.openshift.io/v1alpha1
+kind: LocalVolumeSet
+metadata:
+  name: localblock
+  namespace: openshift-local-storage
+spec:
+  tolerations:
+  - effect: NoSchedule
+    key: node.ocs.openshift.io/storage
+    value: "true"
+
+  nodeSelector:
+    nodeSelectorTerms:
+      - matchExpressions:
+          - key: kubernetes.io/hostname
+            operator: In
+            values:
+              - musl21s01.aydin.lab
+              - musl21s02.aydin.lab
+              - musl21s03.aydin.lab
+              - musl21s04.aydin.lab
+              - musl21s05.aydin.lab
+              - musl22s01.aydin.lab
+              - musl22s02.aydin.lab
+              - musl22s03.aydin.lab
+              - musl22s04.aydin.lab
+              - musl22s05.aydin.lab
+              - musq21s01.aydin.lab
+              - musq21s02.aydin.lab
+              - musq21s03.aydin.lab
+              - musq21s04.aydin.lab
+              - musq21s05.aydin.lab
+              - musl20s01.aydin.lab
+              - musl20s02.aydin.lab
+              - musl20s03.aydin.lab
+              - musl20s04.aydin.lab
+              - musl20s05.aydin.lab
+              - musq20s01.aydin.lab
+              - musq20s02.aydin.lab
+              - musq20s03.aydin.lab
+              - musq20s04.aydin.lab
+              - musq20s05.aydin.lab
+
+
+
+  storageClassName: localblock
+  volumeMode: Block
+  deviceInclusionSpec:
+    deviceTypes:
+      - disk
+    deviceMechanicalProperty:
+     - NonRotational
+    minSize: 2Ti
+

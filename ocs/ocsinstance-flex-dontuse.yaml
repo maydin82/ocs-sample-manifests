@@ -1,0 +1,144 @@
+apiVersion: ocs.openshift.io/v1
+kind: StorageCluster
+metadata:
+  annotations:
+    cluster.ocs.openshift.io/local-devices: "true"
+    uninstall.ocs.openshift.io/cleanup-policy: delete
+    uninstall.ocs.openshift.io/mode: graceful
+  creationTimestamp: "2021-11-18T12:05:22Z"
+  finalizers:
+  - storagecluster.ocs.openshift.io
+  generation: 2
+  name: ocs-storagecluster
+  namespace: openshift-storage
+  resourceVersion: "2322808"
+  uid: 30e72145-2f08-4051-988a-55f8ad5f7a8d
+spec:
+  arbiter: {}
+  encryption:
+    kms: {}
+  externalStorage: {}
+  flexibleScaling: true
+  managedResources:
+    cephBlockPools: {}
+    cephConfig: {}
+    cephDashboard: {}
+    cephFilesystems: {}
+    cephObjectStoreUsers: {}
+    cephObjectStores: {}
+  monDataDirHostPath: /var/lib/rook
+  nodeTopologies: {}
+  storageDeviceSets:
+  - config: {}
+    count: 112
+    dataPVCTemplate:
+      metadata: {}
+      spec:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: "1"
+        storageClassName: localblock
+        volumeMode: Block
+      status: {}
+    name: ocs-deviceset-localblock
+    placement: {}
+    preparePlacement: {}
+    replica: 1
+    resources: {}
+  version: 4.8.0
+status:
+  conditions:
+  - lastHeartbeatTime: "2021-11-19T06:56:59Z"
+    lastTransitionTime: "2021-11-19T06:53:11Z"
+    message: Reconcile completed successfully
+    reason: ReconcileCompleted
+    status: "True"
+    type: ReconcileComplete
+  - lastHeartbeatTime: "2021-11-19T06:56:59Z"
+    lastTransitionTime: "2021-11-18T12:11:43Z"
+    message: Reconcile completed successfully
+    reason: ReconcileCompleted
+    status: "True"
+    type: Available
+  - lastHeartbeatTime: "2021-11-19T06:56:59Z"
+    lastTransitionTime: "2021-11-18T12:11:43Z"
+    message: Reconcile completed successfully
+    reason: ReconcileCompleted
+    status: "False"
+    type: Progressing
+  - lastHeartbeatTime: "2021-11-19T06:56:59Z"
+    lastTransitionTime: "2021-11-18T12:05:22Z"
+    message: Reconcile completed successfully
+    reason: ReconcileCompleted
+    status: "False"
+    type: Degraded
+  - lastHeartbeatTime: "2021-11-19T06:56:59Z"
+    lastTransitionTime: "2021-11-18T12:11:43Z"
+    message: Reconcile completed successfully
+    reason: ReconcileCompleted
+    status: "True"
+    type: Upgradeable
+  failureDomain: host
+  failureDomainKey: kubernetes.io/hostname
+  failureDomainValues:
+  - iabl22s05.ocpprod.tzla.sahibindenlocal.net
+  - iabl22s01.ocpprod.tzla.sahibindenlocal.net
+  - iabq21s02.ocpprod.tzla.sahibindenlocal.net
+  - iabl21s03.ocpprod.tzla.sahibindenlocal.net
+  - iabl21s02.ocpprod.tzla.sahibindenlocal.net
+  - iabq21s01.ocpprod.tzla.sahibindenlocal.net
+  - iabl21s05.ocpprod.tzla.sahibindenlocal.net
+  - iabl21s04.ocpprod.tzla.sahibindenlocal.net
+  - iabl22s04.ocpprod.tzla.sahibindenlocal.net
+  - iabq21s05.ocpprod.tzla.sahibindenlocal.net
+  - iabq21s03.ocpprod.tzla.sahibindenlocal.net
+  - iabl21s01.ocpprod.tzla.sahibindenlocal.net
+  - iabl22s03.ocpprod.tzla.sahibindenlocal.net
+  - iabl22s02.ocpprod.tzla.sahibindenlocal.net
+  images:
+    ceph:
+      actualImage: registry.redhat.io/rhceph/rhceph-4-rhel8@sha256:a5515fcdf2fc7fa791b8364263922051fa3ea77c54a1e28ef342cd4e53ae22cc
+      desiredImage: registry.redhat.io/rhceph/rhceph-4-rhel8@sha256:a5515fcdf2fc7fa791b8364263922051fa3ea77c54a1e28ef342cd4e53ae22cc
+    noobaaCore:
+      actualImage: registry.redhat.io/ocs4/mcg-core-rhel8@sha256:136d4dc43b541f9f22a121932819b0633a028b0c1fcc6b151f54aa3dea3a0f5b
+      desiredImage: registry.redhat.io/ocs4/mcg-core-rhel8@sha256:136d4dc43b541f9f22a121932819b0633a028b0c1fcc6b151f54aa3dea3a0f5b
+    noobaaDB:
+      actualImage: registry.redhat.io/rhel8/postgresql-12@sha256:1b91c9946f4351bd3688bc538d498e6738cd8a5285af998be6e8dfe218dca6fa
+      desiredImage: registry.redhat.io/rhel8/postgresql-12@sha256:1b91c9946f4351bd3688bc538d498e6738cd8a5285af998be6e8dfe218dca6fa
+  nodeTopologies:
+    labels:
+      kubernetes.io/hostname:
+      - iabl22s05.ocpprod.tzla.sahibindenlocal.net
+      - iabl22s01.ocpprod.tzla.sahibindenlocal.net
+      - iabq21s02.ocpprod.tzla.sahibindenlocal.net
+      - iabl21s03.ocpprod.tzla.sahibindenlocal.net
+      - iabl21s02.ocpprod.tzla.sahibindenlocal.net
+      - iabq21s01.ocpprod.tzla.sahibindenlocal.net
+      - iabl21s05.ocpprod.tzla.sahibindenlocal.net
+      - iabl21s04.ocpprod.tzla.sahibindenlocal.net
+      - iabl22s04.ocpprod.tzla.sahibindenlocal.net
+      - iabq21s05.ocpprod.tzla.sahibindenlocal.net
+      - iabq21s03.ocpprod.tzla.sahibindenlocal.net
+      - iabl21s01.ocpprod.tzla.sahibindenlocal.net
+      - iabl22s03.ocpprod.tzla.sahibindenlocal.net
+      - iabl22s02.ocpprod.tzla.sahibindenlocal.net
+      topology.rook.io/rack:
+      - bl22
+      - bq21
+      - bl21
+  phase: Ready
+  relatedObjects:
+  - apiVersion: ceph.rook.io/v1
+    kind: CephCluster
+    name: ocs-storagecluster-cephcluster
+    namespace: openshift-storage
+    resourceVersion: "2322295"
+    uid: 4f4dcb70-025f-4132-b8e3-a28f313373d3
+  - apiVersion: noobaa.io/v1alpha1
+    kind: NooBaa
+    name: noobaa
+    namespace: openshift-storage
+    resourceVersion: "2322806"
+    uid: 4ede27fd-f89b-4160-8d9e-2e31b5040ba4
